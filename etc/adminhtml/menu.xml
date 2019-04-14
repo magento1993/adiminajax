@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Biren_AdminSample::customMenu"
+             title="AdminSample"
+             module="Biren_AdminSample"
+             sortOrder="9999"
+             parent="Magento_Backend::system"
+             resource="Magento_Backend::content" />
+ 
+        <add id="Biren_AdminSample::settings"
+             title="Settings"
+             module="Biren_AdminSample"
+             sortOrder="0"
+             action="adminsample/settings"
+             parent="Biren_AdminSample::customMenu"
+             resource="Magento_Backend::content" />
+    </menu>
+</config>

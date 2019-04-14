@@ -1,0 +1,29 @@
+<form name="form_height" method="POST" id="form_height">
+    <input name="form_key" type="hidden" value="<?php echo $this->getFormKey();?>">
+    <input type="text" name="height" class="form-control input-md">
+    <input type="text" name="weight" class="form-control input-md">
+    <input type="submit" name="calculate-total-submit" value="Submit">
+</form>
+<div class="collection_pr"></div>
+	<script>
+    require(['jquery'], function($){
+       $("#form_height").submit(function(){
+            var url = "<?php echo $block->getBaseUrl().'admin/adminsample/settings/test' ?>";
+            $.ajax({
+            url: url,
+            type: "POST",
+            data: $('#form_height').serialize(),
+            showLoader: true,
+            cache: false,
+            success: function(data){
+                //alert(123);
+                console.log(data);
+                console.log(data.height);
+                alert(data.height);
+                $('.collection_pr').html(data.height);
+            }
+        });
+        return false;
+        });
+    });
+</script>
